@@ -1,0 +1,10 @@
+.fondo{
+    margin: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-left: 2em;
+    background-color: rgb(243, 226, 226);
+    color: black;
+    width: 100%;
+}
