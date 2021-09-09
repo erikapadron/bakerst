@@ -5,6 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import { FcIdea } from "react-icons/fc";
 import "./NavBar.css";
 
+
 export const NavBar=({children})=>{
     return (
         <>
