@@ -9,17 +9,20 @@ export const FotoClases = [
 ];
 
 
-
-export default function ItemList() {
+const ItemList = () => {
     return (
         <div>
-            {FotoClases.map( (fotos)=> <Item fotos={fotos}/> <div key={fotos.id} className="card-body">
+            {FotoClases.map( (fotos)=>  <div key={fotos.id} className="card-body">
             <img src={fotos.foto} alt="" />
             <h2>{fotos.cantidad}</h2>
             <span>{fotos.precio}</span>
             </div>)}
+            <Item/>
         </div>
+        
     )
-}
+};
+
+export default ItemList
 
 

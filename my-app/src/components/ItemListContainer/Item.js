@@ -1,13 +1,14 @@
-import React from 'react'
+import ItemList from "./ItemList"
+import { FotoClases } from "./ItemList"
 
-
-export default function Item({fotos}) {
+const Item = ()=>{
     return (
-        <div key={fotos.id}>
-            <button>{fotos.detalle}</button>
-        </div>
+        <>
+            {FotoClases.map(fotos=> <ItemList FotoClases={fotos}/>)}
+        </>
     )
 }
 
 
 
+export default Item
