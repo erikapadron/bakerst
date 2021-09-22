@@ -13,7 +13,7 @@ export const NavBar=({children})=>{
         <Navbar className="fondo" expand="lg">
         <Container className="fondo">
             <Link to= '/'>
-            <Navbar.Brand href="#home"><h1>BAKER ST.</h1></Navbar.Brand>
+            <Navbar.Brand href="#home"><h1 className="logo">BAKER ST.</h1></Navbar.Brand>
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">

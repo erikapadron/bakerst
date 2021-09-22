@@ -2,6 +2,7 @@ import React from 'react'
 import ItemCount from '../ItemCount/ItemCount';
 import '../ItemCount/ItemCount.css'
 import {Link} from 'react-router-dom'
+import "./ItemDetails.css"
 
 const ItemList = ({id, foto, cantidad, precio}) => {
     const onAdd = (cant) => {
@@ -18,7 +19,7 @@ const ItemList = ({id, foto, cantidad, precio}) => {
                         <button className=" aling-items-center justify-content-center btn btn-primary btn-block contadores"> Detalle </button>
                     </Link>                            
                     <h2 className="list-group-item">Precio: {precio}</h2>
-
+                    
                     <ItemCount stock= {6} initial={1} onAdd={onAdd} />
                 </div>
             </div>
