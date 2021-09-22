@@ -1,19 +1,28 @@
 import React from 'react'
+import ItemCount from '../ItemCount/ItemCount';
+import '../ItemCount/ItemCount.css'
+import {Link} from 'react-router-dom'
 
-
-
-const ItemList = ({id, foto, cantidad, precio, detalle}) => {
+const ItemList = ({id, foto, cantidad, precio}) => {
+    const onAdd = (cant) => {
+        console.log(cant)
+      }
     return (
-        
-        <div className="card w-50"><br/>
-            <h2>Pack nro{id}</h2><br/>            
-            <img src={foto} alt="foto" />  
-            <h2>{cantidad}</h2>          
-            <h2>Precio: {precio}</h2>
-            <h3>{detalle}</h3>
+        <div className="container  d-flex ">
+            <div className="col-4">
+                <div className="card"><br/>
+                    <h2 className="card-tittle">Pack nro{id}</h2><br/>            
+                    <img className="card-img-top" src={foto} alt="foto" />  
+                    <h2 className="list-group-item">{cantidad}</h2> 
+                    <Link to={`/detalle/${id}`}>
+                        <button className=" aling-items-center justify-content-center btn btn-primary btn-block contadores"> Detalle </button>
+                    </Link>                            
+                    <h2 className="list-group-item">Precio: {precio}</h2>
 
+                    <ItemCount stock= {6} initial={1} onAdd={onAdd} />
+                </div>
+            </div>
         </div>
-        
     )
 };
 

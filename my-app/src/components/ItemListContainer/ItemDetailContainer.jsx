@@ -3,18 +3,21 @@ import { useEffect, useState } from 'react';
 import ItemDetails from './ItemDetails';
 
 
-const foto = {id: 4,foto: 'https://images.pexels.com/photos/6457562/pexels-photo-6457562.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', cantidad:'8 clases mensuales', precio: '$5000', detalle: 'Próximamente serás bilingüe'}
 
 function ItemDetailContainer() {
-    const getData2 = new Promise ((resolve)=>{
+    
+    const getItems = new Promise ((resolve)=>{
         setTimeout(() => {
-            resolve(foto)
+            resolve(item)
         }, 2000);
     })
     const [item, setItem]= useState({})
     useEffect(() => {
-        getData2
-        .then(resp => setItem(resp))
+        getItems
+        .then((resp) => { setItem(resp.find(item=> item.id === 1 ));
+        setItem(false);
+        })
+        .catch((error)=> console.log(error))
     }, [])
     return (
         <div>

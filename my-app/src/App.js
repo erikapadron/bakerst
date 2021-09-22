@@ -3,27 +3,32 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar/NavBar';
 import { CartWidget } from './components/CartWidget/CartWidget';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemCount from './components/ItemCount/ItemCount';
-import { useEffect } from 'react';
 import ItemDetailContainer from './components/ItemListContainer/ItemDetailContainer';
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 
 
 function App() {
-  const onAdd = (cant) => {
-    console.log(cant)
-  }
 
   return (
-  <>
-  <NavBar>
-    <CartWidget/>
-  </NavBar>
-   < ItemListContainer /> 
-   <ItemDetailContainer/>
-    
-    <ItemCount stock= {6} initial={1} onAdd={onAdd} />
-  </>
+    <BrowserRouter>
+      <>
+      <NavBar>
+        <CartWidget/>
+      </NavBar>
+      <Switch>
+        <Route path='/' exact>
+        <ItemListContainer/> 
+        </Route>
+        <Route path='/categoria/:idCategoria' component={ItemListContainer}/>
+        <Route path='/detalle' exact>
+        <ItemDetailContainer />
+        </Route>
+        <Route path='/detalle/:idDetalle' component={ItemDetailContainer}/>
+        
+      </Switch>
+      </>
+    </BrowserRouter>
   )
 }
 
