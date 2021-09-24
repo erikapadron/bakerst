@@ -5,6 +5,7 @@ import { CartWidget } from './components/CartWidget/CartWidget';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemListContainer/ItemDetailContainer';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
+import Cart from './components/Cart/Cart';
 
 
 
@@ -25,7 +26,9 @@ function App() {
         <ItemDetailContainer />
         </Route>
         <Route path='/detalle/:idDetalle' component={ItemDetailContainer}/>
-        
+        <Route path='/cart' exact>
+        <Cart/>
+        </Route>
       </Switch>
       </>
     </BrowserRouter>
