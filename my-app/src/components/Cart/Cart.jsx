@@ -1,11 +1,17 @@
 import React from 'react'
+import { useCartContext } from '../../context/CartContext'
 import '../ItemListContainer/ItemDetails.css'
 
 function Cart() {
+    const {cartList, borrarTodo}= useCartContext()
     return (
-        <div className="estilo">
-            <h3>Vas a comprar:</h3>
-        </div>
+        <center className="estilo">
+            {cartList.map(({item}) =><div key={item.id}>
+            <h2 >{item.item.id}</h2>
+            <button onClick={()=>borrarTodo(item)}></button>
+            </div>)
+            }
+        </center>
     )
 }
 

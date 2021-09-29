@@ -1,12 +1,18 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { ContextApp } from '../../App';
+import { cartContext, useCartContext } from '../../context/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
 
+
 function ItemDetails({item}) {
-    const [cantSeleccionada, setCantSeleccionada]= useState (0)
+
+    const{ addToCart }= useCartContext(ContextApp)
     const onAdd = (cant) => {
         console.log(cant)
-      }
+        addToCart({item: item, cantidad: cant})
+    }
+
     return (
         <div className="card text-center estilo">
             <h2 className= "card-tittle">El pack nro {item.id}</h2>
