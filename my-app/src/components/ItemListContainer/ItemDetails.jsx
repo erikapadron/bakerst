@@ -1,7 +1,6 @@
 import React from 'react'
-import { useState, useContext } from 'react';
 import { ContextApp } from '../../App';
-import { cartContext, useCartContext } from '../../context/CartContext';
+import { useCartContext } from '../../context/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
 
 
