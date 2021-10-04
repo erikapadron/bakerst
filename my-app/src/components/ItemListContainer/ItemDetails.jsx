@@ -5,8 +5,6 @@ import { useContext } from 'react';
 
 function ItemDetails({item}) {
     const {cartList, addToCart} = useContext(cartContext);
-    
-    console.log(cartList)
 
     const onAdd = (cant) => {
         console.log(cant)
