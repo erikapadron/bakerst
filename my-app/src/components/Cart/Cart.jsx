@@ -1,22 +1,11 @@
 import React from 'react'
-import { useCartContext } from '../../context/CartContext'
+import { cartContext } from '../../context/CartContext'
+import { useContext  } from 'react'
 import '../ItemListContainer/ItemDetails.css'
-
-export function Prueba ({condition = true}){
-    return (
-        <>
-        <h2>
-        {condition ? 'prueba verdadera' : 'prueba falsa'}
-        </h2>
-        </>
-    )
-}
-
-console.log(Prueba)
 
 function Cart() {
 
-    const {cartList, borrarTodo}= useCartContext()
+    const {cartList, borrarTodo}= useContext(cartContext)
     return (
         <center className="estilo">
             {cartList.map(({item}) =><div key={item.id}>

@@ -1,15 +1,11 @@
 import {Link} from 'react-router-dom'
-import { useContext, useState } from "react"
+import { useState } from "react"
 import './ItemCount.css'
-import { cartContext } from '../../context/CartContext'
-
-
 
 
 const ItemCount = ({stock, initial, onAdd}) => {
     const [count , setCount] = useState(parseInt(initial))
     const [cambioBoton, setCambioBoton] = useState(true)
-    const otroContext= useContext(cartContext)
     function ContadorSuma(){
         if(count<stock){
         setCount( count + 1)}
@@ -25,10 +21,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
         setCambioBoton(false)
     }
 
-    // const Carrito= (count, item)=>{
-    //     setCount(count);
-    //     otroContext.addItem({item: item, cantidad:count})
-    // }
     return (
         <div>
             <button className= "contadores btn btn-primary btn-xl text-uppercase" onClick ={ContadorSuma}>+</button>

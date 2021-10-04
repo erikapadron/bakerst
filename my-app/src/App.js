@@ -4,10 +4,10 @@ import NavBar from './components/NavBar/NavBar';
 import { CartWidget } from './components/CartWidget/CartWidget';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemListContainer/ItemDetailContainer';
-import {Switch, Route} from "react-router-dom";
+import {BrowserRouter as Switch, Route, Router} from "react-router-dom";
 import Cart from './components/Cart/Cart';
 import { createContext } from 'react';
-import CartContextProvider from './context/CartContext';
+import {CartContextProvider} from './context/CartContext';
 
 export const ContextApp= createContext()
 
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <CartContextProvider>
-      <ContextApp.Provider>
+      <Router>
         <NavBar>
           <CartWidget/>
         </NavBar>
@@ -32,9 +32,9 @@ function App() {
           <Cart/>
           </Route>
         </Switch>
-      </ContextApp.Provider>
+      </Router>
     </CartContextProvider>
-  )
+  );
 }
 
 export default App;

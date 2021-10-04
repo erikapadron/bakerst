@@ -42,7 +42,7 @@ function ItemListContainer(){
         if (idCategoria){
             getData
             .then ((rta) => {
-                setFotoClases(rta.filter(Data => Data.categoria=== idCategoria))
+                setFotoClases(rta.filter(Data => Data.categoria === idCategoria))
             })
             .catch(error => console.log(error))
             .finally(()=> setloading(false))

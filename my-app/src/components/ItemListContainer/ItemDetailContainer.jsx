@@ -17,12 +17,12 @@ function ItemDetailContainer() {
 
     useEffect(() => {
             getItems
-            .then((resp) => { setItem(resp.find(item=> item.id == idDetalle ));
+            .then((resp) => { setItem(resp.find(item=> item.id === idDetalle ));
             })
             .catch(error => console.log(error))
 
     }, [idDetalle])
-    
+
     return (
         <div>
             <ItemDetails item= {item}/>
