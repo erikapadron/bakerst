@@ -8,8 +8,8 @@ function Cart() {
     const {cartList, borrarTodo}= useContext(cartContext)
     return (
         <center className="estilo">
-            {cartList.map(({item}) =><div key={item.id}>
-            <h2 >{item.item.id}</h2>
+            {cartList.map(({item}) =><div key={item.pack}>
+            <h2 >{item.item.pack}</h2>
             <button onClick={()=>borrarTodo(item)}></button>
             </div>)
             }
