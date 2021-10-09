@@ -15,7 +15,7 @@ function ItemDetails({item}) {
 
     return (
         <div className="card text-center estilo">
-            <h2 className= "card-tittle">El pack nro {item.pack}</h2>
+            <h2 className= "card-tittle">El pack nro {item.id}</h2>
             <div>
                 <img className="card-body w-25" src={item.foto} alt="foto" /> 
             </div>

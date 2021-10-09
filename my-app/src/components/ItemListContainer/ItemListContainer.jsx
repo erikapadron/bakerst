@@ -33,7 +33,7 @@ function ItemListContainer(){
             {   FotoClases.map(fotos =>
                 <ItemList
                     foto={fotos.foto}
-                    id={fotos.pack}
+                    id={fotos.id}
                     cantidad={fotos.cantidad}
                     precio={fotos.precio}
                     detalle={fotos.detalle}

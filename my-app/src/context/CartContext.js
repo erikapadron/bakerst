@@ -10,8 +10,8 @@ export function CartContextProvider({children}) {
     const addToCard= prods =>{
         let productosCart = [...cartList]
         
-        if (productosCart.some(i=> i.item.pack === prods.item.pack)) {
-            productosCart.find(i=> i.item.pack === prods.item.pack).cantidad += prods.cantidad
+        if (productosCart.some(i=> i.item.id === prods.item.id)) {
+            productosCart.find(i=> i.item.id === prods.item.id).cantidad += prods.cantidad
             setCartList(productosCart);
         }else{
             setCartList([...cartList,prods]);
