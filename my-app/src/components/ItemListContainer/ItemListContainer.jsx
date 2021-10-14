@@ -1,6 +1,6 @@
 import ItemList from "./ItemList"
 import { useEffect, useState } from "react"
-import { getFirebase } from "../../services/Firebase";
+import { getFirestore } from "../../services/Firebase";
 import { useParams } from "react-router-dom"
  
 function ItemListContainer(){
@@ -10,14 +10,14 @@ function ItemListContainer(){
 
     useEffect(() => {
         if(idCategoria){
-            const datos = getFirebase()
+            const datos = getFirestore()
             datos.collection('clases').where('categoria', '==', idCategoria).get()
             .then(resp=>{
                 setFotoClases(resp.docs.map(cantidad=>({id: cantidad.id, ...cantidad.data()}))) 
                 })
             .catch(error => console.log(error))
             .finally(()=> setloading(false))}else{
-                const datos = getFirebase()
+                const datos = getFirestore()
                 datos.collection('clases').get()
                 .then(resp=>{
                     setFotoClases(resp.docs.map(cantidad=>({id: cantidad.id, ...cantidad.data()}))) 

@@ -2,9 +2,9 @@ import React from 'react'
 import { cartContext } from '../../context/CartContext'
 import { useContext, useState  } from 'react'
 import '../ItemListContainer/ItemDetails.css'
-import  firebase  from 'firebase'
+import  firebase  from 'firebase/app'
 import 'firebase/firestore'
-import { getFirebase } from '../../services/Firebase'
+import { getFirestore } from '../../services/Firebase'
 
 
 function Cart() {
@@ -27,7 +27,7 @@ function Cart() {
         })
     }
 
-    const orden = getFirebase()
+    const orden = getFirestore()
     orden.collection('orders').add(orden)
     .then(resp => alert(resp.id))
     .catch(error=> console.log(error))
@@ -76,8 +76,7 @@ function Cart() {
                         
                         <input type="text" placeholder="Ingrese su nombre" name="nombre"/>
                         <input type="text" placeholder="Ingrese su mail" name="mail"/>
-                        <input type="text" placeholder="Ingrese su número" name="numero"/>
-                        {/* <button className= "btn btn-primary btn-xl text-uppercase" onClick ={OrdenFinal}>Terminar compra</button>   */}
+                        <input type="text" placeholder="Ingrese su número" name="numero"/> 
                     </form>
                 </div>}
             </center>
