@@ -1,4 +1,3 @@
-import React from 'react'
 import { cartContext } from '../../context/CartContext'
 import { useContext, useState  } from 'react'
 import '../ItemListContainer/ItemDetails.css'
@@ -25,8 +24,7 @@ function Cart() {
             
             return {id, categoria, precio}   
         })
-    }
-
+    
     const orden = getFirestore()
     orden.collection('orders').add(orden)
     .then(resp => alert(resp.id))
@@ -59,7 +57,7 @@ function Cart() {
             console.log('resultado:', res)
         })
     })
-
+}
 
     return (
         <div>
@@ -71,7 +69,7 @@ function Cart() {
                     {cartList.map(({item}) =><div key={item.id}>
                     <h2 >{item.item.id}</h2>
                     <button onClick={()=>borrarTodo(item)}></button>
-                    </div>)}}
+                    </div>)}
                     <form onChange={cambiosEnLaOrden}>
                         
                         <input type="text" placeholder="Ingrese su nombre" name="nombre"/>
@@ -83,5 +81,6 @@ function Cart() {
         </div>
     )
 }
+
 
 export default Cart
